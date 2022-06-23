@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>VueCalculator</title>
     <link rel="stylesheet" href="/assets/styles/index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
       @font-face {
         font-family: emoji;
@@ -30,24 +31,24 @@
   <body>
     <div id="app" class="container">
       <div class="row">
-        <div class="col">
-          <input type="number" />
+        <div  class="col">
+          <input v-model="logic.num1" type="number" />
         </div>
 
         <div class="col" style="display: flex; flex-direction: column; font-family: emoji">
-          <label><input type="radio" name="operator" value="sum" /> ➕</label>
-          <label><input type="radio" name="operator" value="subtract" /> ➖</label>
-          <label><input type="radio" name="operator" value="multiply" /> ✖</label>
-          <label><input type="radio" name="operator" value="divide" /> ➗</label>
+          <label><input v-model="logic.radio"   type="radio" name="operator" value="sum" /> ➕</label>
+          <label><input v-model="logic.radio"   type="radio" name="operator" value="subtract" /> ➖</label>
+          <label><input v-model="logic.radio"   type="radio" name="operator" value="multiply" /> <span class="material-symbols-outlined">close</span></label>
+          <label><input v-model="logic.radio"   type="radio" name="operator" value="divide" /> ➗</label>
         </div>
 
         <div class="col">
-          <input type="number" />
+          <input v-model="logic.num2" type="number" />
         </div>
 
         <div class="col">=</div>
 
-        <output class="col">0</output>
+        <output class="col">{{logic.sum}}</output>
       </div>
     </div>
 
