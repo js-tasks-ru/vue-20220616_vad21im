@@ -25,12 +25,13 @@
 
         data() {
           return {
-            count: 0,
+            count: undefined,
           };
         },
         methods: {
           setCount(){
-            this.count += 1
+            if(this.count === undefined)this.count = 0
+            this.count = this.count +1
           }
         }
       }).mount('#app');

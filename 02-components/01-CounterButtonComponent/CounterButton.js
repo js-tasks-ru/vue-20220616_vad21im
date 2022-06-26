@@ -6,7 +6,7 @@ export default defineComponent({
     count: {
       type: Number,
       required: false,
-      default: ()=> 0
+      default: 0
     },
     setCount: {
       type: Function,
