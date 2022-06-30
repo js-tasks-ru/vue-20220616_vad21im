@@ -7,13 +7,16 @@ export default defineComponent({
       type: Number,
       required: false,
       default: 0
-    },
-    setCount: {
-      type: Function,
-      required: false
     }
   },
+  emits: ['update:count'],
+  methods: {
+    increment() {
+      // При клике на кнопку порождаем событие и отправляем новое значение
+      this.$emit('update:count', this.count + 1);
+    },
+  },
 
-  template: `<button @click="()=>setCount()" type="button">{{count}}</button>`,
+  template: `<button type="button" @click="increment">{{ count }}</button>`,
 });
 
