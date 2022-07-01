@@ -14,6 +14,9 @@ export default defineComponent({
     }
   },
   computed: {
+    formatDateNum() {
+      return new Date(this.date).toISOString().split('T')[0];
+    },
     formatDate() {
       return new Date(this.date).toLocaleDateString(navigator.language, {
         year: 'numeric',
@@ -35,7 +38,7 @@ export default defineComponent({
       </li>
       <li>
         <img class="icon meetup-info__icon" alt="icon" src="/assets/icons/icon-cal-lg.svg" />
-        <time datetime="2020-01-01">{{formatDate}}</time>
+        <time datetime="2020-01-01">{{formatDateNum}}</time>
       </li>
     </ul>`,
 });
