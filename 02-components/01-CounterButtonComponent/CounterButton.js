@@ -17,6 +17,7 @@ export default defineComponent({
     },
   },
 
+
   template: `<button type="button" @click="increment">{{ count }}</button>`,
 });
 
